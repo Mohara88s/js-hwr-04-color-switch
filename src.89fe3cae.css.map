@@ -1,1 +1,0 @@
-{"version":3,"sources":["sass/box.scss"],"names":[],"mappings":"AAAA,KACE,WAAA,CACA,YAAA,CACA,YAAA,CACA","file":"src.89fe3cae.css","sourceRoot":"../src","sourcesContent":[".box {\n  width: 200px;\n  padding: 20px;\n  display: flex;\n  justify-content: space-around;\n}\n"]}
