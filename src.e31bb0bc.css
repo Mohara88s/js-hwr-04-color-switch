@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/*
+ * Главный файл стилей.
+ * Все паршалы подключаются сюда.
+ */
+.box {
+  width: 120px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*# sourceMappingURL=/src.e31bb0bc.css.map */
