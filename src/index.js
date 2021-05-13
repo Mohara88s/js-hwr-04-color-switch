@@ -15,23 +15,25 @@ const refs = {
   buttonStop: document.querySelector('button[data-action="stop"]'),
   body:document.querySelector('body')
 }
+refs.buttonStop.setAttribute('disabled', true)
 
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
 refs.buttonStart.addEventListener('click', onButtonStartClick)
+refs.buttonStop.addEventListener('click', onButtonStopClick)
 
 function onButtonStartClick() {
   intervalId = setInterval(changeColor, NOTIFICATION_DELAY)
-  refs.buttonStop.addEventListener('click', onButtonStopClick)
-  refs.buttonStart.removeEventListener('click', onButtonStartClick)
+  refs.buttonStart.setAttribute('disabled', true)
+  refs.buttonStop.removeAttribute('disabled')
 }
 
 function onButtonStopClick() {
   clearInterval(intervalId)
-  refs.buttonStart.addEventListener('click', onButtonStartClick)
-  refs.buttonStop.removeEventListener('click', onButtonStopClick)
+  refs.buttonStart.removeAttribute('disabled')
+  refs.buttonStop.setAttribute('disabled', true)
 }
 
 function changeColor() {
