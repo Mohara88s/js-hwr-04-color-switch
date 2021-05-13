@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var t=["#FFFFFF","#2196F3","#4CAF50","#FF9800","#009688","#795548"],e=1e3,o=null,n={buttonStart:document.querySelector('button[data-action="start"]'),buttonStop:document.querySelector('button[data-action="stop"]'),body:document.querySelector("body")};n.buttonStop.setAttribute("disabled",!0);var r=function(t,e){return Math.floor(Math.random()*(e-t+1)+t)};function u(){o=setInterval(b,e),n.buttonStart.setAttribute("disabled",!0),n.buttonStop.removeAttribute("disabled")}function a(){clearInterval(o),n.buttonStart.removeAttribute("disabled"),n.buttonStop.setAttribute("disabled",!0)}function b(){n.body.setAttribute("style","background-color: ".concat(t[r(0,5)]))}n.buttonStart.addEventListener("click",u),n.buttonStop.addEventListener("click",a);
 },{"./sass/main.scss":"clu1"}]},{},["Focm"], null)
-//# sourceMappingURL=/parcel-project-template/src.9ca5e79e.js.map
+//# sourceMappingURL=/js-hwr-04-color-switch/src.9ca5e79e.js.map
