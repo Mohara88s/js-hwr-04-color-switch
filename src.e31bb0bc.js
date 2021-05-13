@@ -202,23 +202,25 @@ var refs = {
   buttonStop: document.querySelector('button[data-action="stop"]'),
   body: document.querySelector('body')
 };
+refs.buttonStop.setAttribute('disabled', true);
 
 var randomIntegerFromInterval = function randomIntegerFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
 refs.buttonStart.addEventListener('click', onButtonStartClick);
+refs.buttonStop.addEventListener('click', onButtonStopClick);
 
 function onButtonStartClick() {
   intervalId = setInterval(changeColor, NOTIFICATION_DELAY);
-  refs.buttonStop.addEventListener('click', onButtonStopClick);
-  refs.buttonStart.removeEventListener('click', onButtonStartClick);
+  refs.buttonStart.setAttribute('disabled', true);
+  refs.buttonStop.removeAttribute('disabled');
 }
 
 function onButtonStopClick() {
   clearInterval(intervalId);
-  refs.buttonStart.addEventListener('click', onButtonStartClick);
-  refs.buttonStop.removeEventListener('click', onButtonStopClick);
+  refs.buttonStart.removeAttribute('disabled');
+  refs.buttonStop.setAttribute('disabled', true);
 }
 
 function changeColor() {
@@ -252,7 +254,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63237" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50726" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
